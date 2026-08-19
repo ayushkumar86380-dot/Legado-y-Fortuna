@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Legado y Fortuna · Restaurante Gourmet Argentino</title>
+<meta name="description" content="Legado y Fortuna — Restaurante gourmet en Argentina. La alquimia del fuego, cocina de autor y el prestigioso Salón de la Fortuna. Reserve su mesa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Montserrat,sans-serif;background:#1A120D;color:#F3E9DC;line-height:1.6}
+h1,h2,h3,.d{font-family:'Cormorant Garamond',serif;font-weight:300;letter-spacing:-.01em;line-height:1.05}
+.script{font-family:Tangerine,cursive;font-weight:400;color:#C89B6D}
+.gold{color:#C89B6D}
+.dim{color:#F3E9DCb3}
+.dim2{color:#F3E9DC8c}
+.dim3{color:#F3E9DC66}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+@media(min-width:768px){.wrap{padding:0 40px}}
+section{padding:112px 0}
+@media(min-width:768px){section{padding:160px 0}}
+.up{font-size:11px;letter-spacing:.22em;text-transform:uppercase}
+.btn-c{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#C89B6D,#a87e4f);color:#1A120D;border-radius:999px;font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase;padding:14px 32px;transition:.3s;border:1px solid #C89B6D}
+.btn-c:hover{background:transparent;color:#C89B6D}
+.btn-o{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:transparent;color:#F3E9DC;border:1px solid #F3E9DC66;border-radius:999px;font-weight:500;font-size:12px;letter-spacing:.2em;text-transform:uppercase;padding:14px 32px;transition:.3s}
+.btn-o:hover{border-color:#C89B6D;color:#C89B6D}
+.leaf-divider{height:1px;background:linear-gradient(90deg,#C89B6D00,#C89B6D80,#C89B6D00);margin:0 auto}
+
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.5s}
+header.sc{background:#1A120De6;backdrop-filter:blur(10px);border-bottom:1px solid #3a2a1d99}
+nav.hd{display:flex;align-items:center;justify-content:space-between;height:80px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:24px;color:#F3E9DC;display:flex;align-items:baseline;gap:8px}
+.logo .amp{color:#C89B6D;font-style:italic}
+nav>ul{display:none;gap:36px;list-style:none}
+@media(min-width:768px){nav>ul{display:flex}}
+nav>ul a{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#F3E9DCcc;transition:.3s}
+nav>ul a:hover{color:#C89B6D}
+.mm{display:none}
+@media(max-width:767px){.mm{display:block;position:relative}}
+.mm summary{list-style:none;cursor:pointer;color:#F3E9DC}
+.mm ul{position:absolute;left:-24px;right:-24px;top:100%;background:#1A120D;border-top:1px solid #3a2a1d99;padding:24px;list-style:none;display:grid;gap:20px}
+.mm a{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#F3E9DCcc}
+
+.hero{position:relative;min-height:100vh;display:flex;align-items:stretch;overflow:hidden;padding:0}
+.hero-bg{position:absolute;inset:0}
+@media(min-width:768px){.hero-bg{left:38%}}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-bg::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#1A120D 0%,#1A120D66 50%,transparent 100%)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#1A120D4d,#0000,#1A120Db3)}
+.hero .wrap{position:relative;width:100%;padding:120px 24px 80px}
+@media(min-width:768px){.hero .wrap{padding:160px 40px 100px}}
+.hero .content{max-width:560px}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);margin:16px 0 32px;color:#F3E9DC}
+.hero p.sub{color:#F3E9DCbf;font-size:18px;max-width:480px;margin-bottom:40px}
+.hero-acts{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px}
+.badges{display:flex;gap:16px 24px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#F3E9DCb3;border:1px solid #C89B6D66;border-radius:999px;padding:8px 16px}
+.badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#C89B6D}
+.scroll-cue{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:none;flex-direction:column;align-items:center;gap:8px;color:#F3E9DC80}
+@media(min-width:768px){.scroll-cue{display:flex}}
+.scroll-cue b{width:1px;height:40px;background:linear-gradient(#C89B6D99,transparent)}
+
+.cols{display:grid;gap:48px}
+@media(min-width:900px){.cols{grid-template-columns:1fr 1fr;gap:80px;align-items:var(--a,center)}}
+.about-img{position:relative;border-radius:40px;overflow:hidden;border:1px solid #3a2a1d}
+.about-img img{width:100%;height:420px;object-fit:cover}
+@media(min-width:768px){.about-img img{height:560px}}
+.about-img::after{content:'';position:absolute;inset:0;background:linear-gradient(#0000,#1A120Db3)}
+.leaf-icon{position:absolute;top:-24px;right:-24px;width:80px;height:80px;border-radius:50%;background:#241811;border:1px solid #C89B6D66;display:flex;align-items:center;justify-content:center}
+.values{list-style:none;display:grid;gap:24px}
+@media(min-width:640px){.values{grid-template-columns:1fr 1fr;gap:24px 32px}}
+.values li{display:flex;gap:16px}
+.values .ic{flex-shrink:0;margin-top:4px;width:36px;height:36px;border-radius:50%;border:1px solid #C89B6D80;display:flex;align-items:center;justify-content:center;color:#C89B6D}
+.values h3{font-size:20px;color:#F3E9DC;margin-bottom:4px}
+.values p{font-size:14px;color:#F3E9DC99}
+
+.picks{position:relative}
+.picks-head{text-align:center;max-width:640px;margin:0 auto 64px}
+.picks-head h2{font-size:clamp(2.2rem,4vw,3rem);margin-top:8px}
+.picks-grid{display:grid;gap:24px}
+@media(min-width:640px){.picks-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:1024px){.picks-grid{grid-template-columns:repeat(4,1fr);gap:32px}}
+.dish{background:#241811;border:1px solid #3a2a1d;border-radius:32px;overflow:hidden;transition:.5s}
+.dish:hover{border-color:#C89B6D99;transform:translateY(-6px)}
+.dish-img{height:240px;overflow:hidden;position:relative}
+@media(min-width:768px){.dish-img{height:256px}}
+.dish-img img{width:100%;height:100%;object-fit:cover;transition:.7s}
+.dish:hover .dish-img img{transform:scale(1.1)}
+.dish-img::after{content:'';position:absolute;inset:0;background:linear-gradient(#0000,#241811)}
+.dish-body{padding:24px}
+.dish h3{font-size:24px;margin-bottom:8px}
+.dish .desc{font-size:14px;color:#F3E9DC99;min-height:48px;margin-bottom:20px}
+.dish-foot{display:flex;align-items:center;justify-content:space-between}
+.dish-price{font-family:'Cormorant Garamond',serif;font-size:20px;color:#C89B6D}
+.dish-btn{width:40px;height:40px;border-radius:50%;background:#C89B6D;color:#1A120D;display:flex;align-items:center;justify-content:center;transition:.3s;cursor:pointer;border:none;font-size:20px;line-height:1}
+.dish-btn:hover{background:transparent;color:#C89B6D;box-shadow:inset 0 0 0 1px #C89B6D}
+
+.service{background:#241811;border-top:1px solid #3a2a1db3;border-bottom:1px solid #3a2a1db3;padding:64px 0}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+@media(min-width:1024px){.svc-grid{grid-template-columns:repeat(4,1fr)}}
+.svc{text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px}
+.svc .ic{width:56px;height:56px;border-radius:50%;border:1px solid #C89B6D66;display:flex;align-items:center;justify-content:center;color:#C89B6D}
+.svc h3{font-size:20px}
+.svc p{font-size:14px;color:#F3E9DC8c;max-width:200px}
+
+.casino{position:relative;background:#150E0A;padding:112px 0 144px;overflow:hidden}
+@media(min-width:768px){.casino{padding:144px 0}}
+.casino::before{content:'';position:absolute;inset:0;background:radial-gradient(80% 60% at 70% 30%,#b9835a2e,transparent 70%);pointer-events:none}
+.casino-img{position:relative;border-radius:40px;overflow:hidden;border:1px solid #3a2a1d}
+.casino-img img{width:100%;height:360px;object-fit:cover}
+@media(min-width:768px){.casino-img img{height:460px}}
+.casino-img::after{content:'';position:absolute;inset:0;background:linear-gradient(#0000,#150E0Acc)}
+.casino .cols{--a:center}
+@media(max-width:899px){.casino .order1{order:1}.casino .order2{order:2}}
+.casino h2{font-size:clamp(2.2rem,4vw,3rem);margin-bottom:24px}
+.casino p{color:#F3E9DCb3;margin-bottom:20px}
+.casino p strong{color:#C89B6D;font-weight:500}
+.casino-link{display:inline-flex;align-items:center;gap:8px;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#C89B6D;margin-top:8px;transition:.3s}
+.casino-link:hover{gap:16px}
+
+footer{background:#120A07;border-top:1px solid #3a2a1db3;padding-top:80px;padding-bottom:40px}
+.fg{display:grid;gap:48px;padding-bottom:64px;border-bottom:1px solid #3a2a1d99}
+@media(min-width:768px){.fg{grid-template-columns:5fr 3fr 4fr;gap:40px}}
+footer h4{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#C89B6D;margin-bottom:20px}
+footer ul{list-style:none;display:grid;gap:12px}
+footer ul a{font-size:14px;color:#F3E9DCa6;transition:.3s}
+footer ul a:hover{color:#C89B6D}
+.fg p.desc{color:#F3E9DC99;max-width:380px;margin:20px 0}
+.contact-row{display:grid;gap:24px;padding:40px 0;border-bottom:1px solid #3a2a1d99;font-size:14px;color:#F3E9DC8c}
+@media(min-width:768px){.contact-row{grid-template-columns:repeat(3,1fr)}}
+.contact-row .lbl{color:#F3E9DCcc;margin-bottom:4px}
+.fb{padding-top:32px;display:flex;flex-direction:column;gap:16px;font-size:12px;color:#F3E9DC66}
+@media(min-width:768px){.fb{flex-direction:row;justify-content:space-between}}
+.fb p:last-child{text-align:center}
+@media(min-width:768px){.fb p:last-child{text-align:right}}
+</style>
+</head>
+<body>
+
+<header id="hd">
+  <div class="wrap">
+    <nav class="hd">
+      <a href="#inicio" class="logo">Legado <span class="amp">&amp;</span> Fortuna</a>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#seleccion">Selección</a></li>
+        <li><a href="#casino">El Casino</a></li>
+      </ul>
+      <div class="mm">
+        <details>
+          <summary><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h18M3 12h18M3 17h18"/></svg></summary>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#seleccion">Selección</a></li>
+            <li><a href="#casino">El Casino</a></li>
+            <li><a href="#reserva">Reservar</a></li>
+            <li><a href="policies.html">Políticas</a></li>
+          </ul>
+        </details>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-bg">
+    <img src="https://media.base44.com/images/public/6a85ca979164543e5cc3e07f/916a526e2_generated_e58f6f79.png" alt="Ojo de Bife a la llama">
+  </div>
+  <div class="wrap">
+    <div class="content">
+      <p class="script" style="font-size:clamp(2rem,4vw,3rem);line-height:1">Sabores que narran nuestra tierra</p>
+      <h1>La Alquimia<br>del <span class="gold" style="font-style:italic">Fuego</span></h1>
+      <p class="sub">Una experiencia gastronómica de autor en el corazón de la Argentina, donde la cocina a leña y la curaduría del chef transforman cada plato en un ritual de prestigio.</p>
+      <div class="hero-acts">
+        <a href="#reserva" class="btn-c">Reservar una Mesa</a>
+        <a href="#seleccion" class="btn-o">Explorar la Carta</a>
+      </div>
+      <div class="badges">
+        <span class="badge">Ingredientes Premium</span>
+        <span class="badge">Arte de Autor</span>
+        <span class="badge">Hecho con Pasión</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue">
+    <span class="up" style="font-size:10px;letter-spacing:.3em">Descubrir</span>
+    <b></b>
+  </div>
+</section>
+
+<section id="nosotros">
+  <div class="wrap cols">
+    <div>
+      <div class="about-img">
+        <img src="https://media.base44.com/images/public/6a85ca979164543e5cc3e07f/66028e077_generated_3a2300b8.png" alt="Ingredientes orgánicos argentinos">
+        <div class="leaf-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=".75"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.8 2c.95 5.94-.1 11.24-3.1 14.7A7 7 0 0 1 11 20zm0 0c-1-2-2-5-2-10"/></svg>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p class="script" style="font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:12px">Nuestra esencia</p>
+      <h2 style="font-size:clamp(2.2rem,4vw,3rem);margin-bottom:24px">Cosecha de la tierra, <span class="gold" style="font-style:italic">legado del fuego</span></h2>
+      <p style="color:#F3E9DCb3;max-width:520px;margin-bottom:40px">En Legado y Fortuna honramos el origen de cada ingrediente. Nuestra cocina dialoga con los productores argentinos, celebrando la estacionalidad y el carácter inconfundible de la parrilla a leña. Cada visita es una inmersión en el sabor, la textura y la memoria.</p>
+      <ul class="values">
+        <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.8 2c.95 5.94-.1 11.24-3.1 14.7A7 7 0 0 1 11 20z"/></svg></span><div><h3>Origen Sustentable</h3><p>Produción local y ética, respetando la tierra que nos nutre.</p></div></li>
+        <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.8 2c.95 5.94-.1 11.24-3.1 14.7A7 7 0 0 1 11 20z"/></svg></span><div><h3>Menú de Estación</h3><p>Cada plato sigue el ritmo de la naturaleza y la cosecha.</p></div></li>
+        <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.8 2c.95 5.94-.1 11.24-3.1 14.7A7 7 0 0 1 11 20z"/></svg></span><div><h3>Cocina a Leña</h3><p>El alma de la cocina argentina, el fuego como protagonista.</p></div></li>
+        <li><span class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.8 2c.95 5.94-.1 11.24-3.1 14.7A7 7 0 0 1 11 20z"/></svg></span><div><h3>Curaduría de Chef</h3><p>Precisión y arte en cada emplatado de autor.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="picks" id="seleccion">
+  <div class="wrap">
+    <div class="picks-head">
+      <p class="script" style="font-size:clamp(1.8rem,3vw,2.4rem)">Selección de autor</p>
+      <h2>Obras maestras de la <span class="gold" style="font-style:italic">cocina</span></h2>
+      <div class="leaf-divider" style="width:128px;margin-top:32px"></div>
+    </div>
+    <div class="picks-grid">
+      <article class="dish">
+        <div class="dish-img"><img src="https://media.base44.com/images/public/6a85ca979164543e5cc3e07f/ef36e63ea_generated_2af4b54f.png" alt="Cordero a la Brasa"></div>
+        <div class="dish-body">
+          <h3>Cordero a la Brasa</h3>
+          <p class="desc">Chuletas a leña con vegetales carbonizados y aceite de hierbas.</p>
+          <div class="dish-foot"><span class="dish-price">$24.500 ARS</span><button class="dish-btn">+</button></div>
+        </div>
+      </article>
+      <article class="dish">
+        <div class="dish-img"><img src="https://media.base44.com/images/public/6a85ca979164543e5cc3e07f/28435b007_generated_3982f0e5.png" alt="Sorrentinos de Autor"></div>
+        <div class="dish-body">
+          <h3>Sorrentinos de Autor</h3>
+          <p class="desc">Pasta artesanal con parmesano y manteca de salvia.</p>
+          <div class="dish-foot"><span class="dish-price">$18.900 ARS</span><button class="dish-btn">+</button></div>
+        </div>
+      </article>
+      <article class="dish">
+        <div class="dish-img"><img src="https://media.base44.com/images/public/6a85ca979164543e5cc3e07f/5254ee6f8_generated_469ce0f8.png" alt="Fondant de Cacao"></div>
+        <div class="dish-body">
+          <h3>Fondant de Cacao</h3>
+          <p class="desc">Corazón fundente con polvo de cacao y tuile caramelizada.</p>
+          <div class="dish-foot"><span class="dish-price">$9.200 ARS</span><button class="dish-btn">+</button></div>
+        </div>
+      </article>
+      <article class="dish">
+        <div class="dish-img"><img src="https://media.base44.com/images/public/6a85ca979164543e5cc3e07f/6b99ee0a0_generated_a4b90688.png" alt="Trucha Patagónica"></div>
+        <div class="dish-body">
+          <h3>Trucha Patagónica</h3>
+          <p class="desc">Trucha ahumada con alcauciles y aceite de pimentón.</p>
+          <div class="dish-foot"><span class="dish-price">$21.300 ARS</span><button class="dish-btn">+</button></div>
+        </div>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:56px">
+      <a href="#reserva" class="btn-o">Ver la Carta Completa</a>
+    </div>
+  </div>
+</section>
+
+<section class="service">
+  <div class="wrap">
+    <div class="svc-grid">
+      <div class="svc">
+        <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="m7 11 4.5-4.5 2 2L18 4m-4 0h4v4m-6 10h6a2 2 0 0 0 2-2V9M5 20a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H5z"/></svg></span>
+        <h3>Cena Privada</h3>
+        <p>Salones íntimos para ocasiones memorables.</p>
+      </div>
+      <div class="svc">
+        <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></span>
+        <h3>Menú de Degustación</h3>
+        <p>El recorrido estacional del chef, plato a plato.</p>
+      </div>
+      <div class="svc">
+        <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18m-3 4-2 2"/></svg></span>
+        <h3>Reserva Segura</h3>
+        <p>Confirmación inmediata y atención personalizada.</p>
+      </div>
+      <div class="svc">
+        <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="12" cy="8" r="7"/><path d="m8.21 13.89 1.4 4.31L12 16l2.4 2.2 1.4-4.31a7 7 0 0 1-7.58 0z"/></svg></span>
+        <h3>Programa de Lealtad</h3>
+        <p>Recompensas exclusivas para nuestros huéspedes frecuentes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="casino" id="casino">
+  <div class="wrap cols">
+    <div class="order2">
+      <p class="script" style="font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:8px">El complejo</p>
+      <h2>El Salón de la <span class="gold" style="font-style:italic">Fortuna</span></h2>
+      <p>La sofisticación trasciende la mesa. Descubra nuestro <strong>Casino</strong>, un espacio de distinción y emoción donde el azar se encuentra con el lujo. Viva la experiencia de nuestro prestigioso <strong>Casino</strong> físico, diseñado para quienes buscan la culminación de una noche perfecta entre juegos de destreza y un ambiente inigualable.</p>
+      <p class="dim3">Ubicado dentro del mismo complejo que el restaurante, el <strong style="color:#C89B6D">Casino</strong> ofrece una sala de juego de salón: el suave click de las fichas, tapizados de terciopelo y la elegancia difuminada de una gran sala. Un entorno terrestre y presencial, donde la atmósfera, las instalaciones y la experiencia de juego convergen en una sola noche.</p>
+      <a href="#reserva" class="casino-link">Conocer el Casino <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+    </div>
+    <div class="order1 casino-img">
+      <img src="https://media.base44.com/images/public/6a85ca979164543e5cc3e07f/fe19290f4_generated_a51b8722.png" alt="Salón del casino físico en el complejo">
+    </div>
+  </div>
+</section>
+
+<footer id="reserva">
+  <div class="wrap">
+    <div class="fg">
+      <div>
+        <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:20px">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.8 2c.95 5.94-.1 11.24-3.1 14.7A7 7 0 0 1 11 20z" stroke="#C89B6D"/></svg>
+          <span class="d" style="font-size:30px">Legado <span class="gold" style="font-style:italic">&amp;</span> Fortuna</span>
+        </div>
+        <p class="desc">Restaurante gourmet argentino de autor y casino físico. Cocina a leña, ingredientes premium y experiencias exclusivas en el corazón de Recoleta.</p>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="index.html#seleccion">Selección de Autor</a></li>
+          <li><a href="index.html#casino">El Casino</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal y Cumplimiento</h4>
+        <ul>
+          <li><a href="policies.html#juego-responsable">Juego Responsable</a></li>
+          <li><a href="policies.html#accesibilidad">Accesibilidad</a></li>
+          <li><a href="policies.html#privacidad">Política de Privacidad</a></li>
+          <li><a href="policies.html#cookies">Política de Cookies</a></li>
+          <li><a href="policies.html#terminos">Términos y Condiciones</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="contact-row">
+      <div><p class="lbl">Dirección</p><p>Av. Alvear 1450, Recoleta, Buenos Aires, Argentina</p></div>
+      <div><p class="lbl">Reservas</p><p>+54 11 4800 0000 · reservas@legadoyfortuna.ar</p></div>
+      <div><p class="lbl">Horario</p><p>Mar – Dom · 19:30 a 01:00 hs</p></div>
+    </div>
+    <div class="fb">
+      <p>© 2026 Legado y Fortuna. Todos los derechos reservados.</p>
+      <p>Acceso al casino exclusivo para mayores de 18 años · Juegue con responsabilidad.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+addEventListener('scroll',()=>{document.getElementById('hd').classList.toggle('sc',scrollY>40)});
+</script>
+</body>
+</html>
