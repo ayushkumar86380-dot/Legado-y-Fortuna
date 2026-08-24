@@ -31,7 +31,8 @@ section{padding:112px 0}
 .btn-o:hover{border-color:#C89B6D;color:#C89B6D}
 .leaf-divider{height:1px;background:linear-gradient(90deg,#C89B6D00,#C89B6D80,#C89B6D00);margin:0 auto}
 
-header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.5s}
+header{position:fixed;top:0;left:0;right:0;z-index:50;transition:.5s;display:none}
+header.visible{display:block}
 header.sc{background:#1A120De6;backdrop-filter:blur(10px);border-bottom:1px solid #3a2a1d99}
 nav.hd{display:flex;align-items:center;justify-content:space-between;height:80px}
 .logo{font-family:'Cormorant Garamond',serif;font-size:24px;color:#F3E9DC;display:flex;align-items:baseline;gap:8px}
@@ -467,13 +468,19 @@ addEventListener('scroll',()=>{document.getElementById('hd').classList.toggle('s
 <script>
 (function(){
   const section=document.getElementById('ageSection');
+  const header=document.getElementById('hd');
   const verified=localStorage.getItem('ageVerified');
+  
   if(verified==='true'){
     section.style.display='none';
+    header.classList.add('visible');
   }
+  
   document.querySelectorAll('.age-btn').forEach(b=>{
     b.addEventListener('click',()=>{
       localStorage.setItem('ageVerified','true');
+      section.style.display='none';
+      header.classList.add('visible');
     });
   });
 })();
