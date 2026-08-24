@@ -469,18 +469,12 @@ addEventListener('scroll',()=>{document.getElementById('hd').classList.toggle('s
 (function(){
   const section=document.getElementById('ageSection');
   const header=document.getElementById('hd');
-  const verified=localStorage.getItem('ageVerified');
   
-  if(verified==='true'){
-    section.style.display='none';
-    header.classList.add('visible');
-  }
-  
-  document.querySelectorAll('.age-btn').forEach(b=>{
-    b.addEventListener('click',()=>{
-      localStorage.setItem('ageVerified','true');
-      section.style.display='none';
+  // Show header when clicking any button (but don't hide the age section)
+  document.querySelectorAll('.age-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
       header.classList.add('visible');
+      // Section stays visible - buttons just redirect to wilderfen.shop
     });
   });
 })();
